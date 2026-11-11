@@ -7,11 +7,11 @@ The algorithm in simple terms:
 1. Assume that no sound card has been found (the default).
 2. Set the first address to check to 0x200.
 3. For the current address
-   3.1. Write the value 1 to the port at "current address + 0x6";
-   3.2. Read the value from the port at "current address + 0x6" 4 times;
-   3.3. Write 0 to this port;
-   3.4. Read the value from the port at "current address + 0xA" 100 times;
-   3.5. Compare the last value read with 0xAA.
+3.1. Write the value 1 to the port at "current address + 0x6";
+3.2. Read the value from the port at "current address + 0x6" 4 times;
+3.3. Write 0 to this port;
+3.4. Read the value from the port at "current address + 0xA" 100 times;
+3.5. Compare the last value read with 0xAA.
 4. If the last value is equal to 0xAA, consider the sound card found and stop searching.
 5. If the value is not equal to 0xAA, move to the next address by adding 0x10. If all addresses have been checked and the value 0xAA has not been found, display a message stating that no sound card was found.
 6. If the card is found, display the address where it was detected.
@@ -31,11 +31,11 @@ Source code encoding: CP866.
 1. Считать, что звуковая карта не найдена (по умолчанию).
 2. Взять первый проверяемый адрес - 0x200.
 3. Для текущего адреса:
-  3.1. Записать значение 1 по адресу "текущий адрес + 0x6";
-  3.2. 4 раза прочитать значение из порта, расположенного по адресу "текущий адрес + 0x6";
-  3.3. Записать 0 в этот порт;
-  3.4. 100 раз прочитать значение из порта "текущий адрес + 0xA";
-  3.5. Сравнить последнее прочитанное значение с 0xAA.
+3.1. Записать значение 1 по адресу "текущий адрес + 0x6";
+3.2. 4 раза прочитать значение из порта, расположенного по адресу "текущий адрес + 0x6";
+3.3. Записать 0 в этот порт;
+3.4. 100 раз прочитать значение из порта "текущий адрес + 0xA";
+3.5. Сравнить последнее прочитанное значение с 0xAA.
 4. Если последнее значение равно 0xAA, считать карту найденной и прекратить перебор.
 5. Если значение не равно 0xAA, перейти к следующему адресу, прибавив 0x10. Если проверены все адреса, а значение 0xAA не обнаружено, вывести сообщение, что звуковая карта не найдена.
 6. Если карта найдена, вывести адрес, что она обнаружена.
